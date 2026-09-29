@@ -326,8 +326,3 @@ print(f"\nSaved cleaned data: {analysis_path.name}")
 print(f"Saved summary tables: {summary_dir.name}")
 print(f"Saved charts folder: {OUTPUT_DIR.name}")
 
-# Optional follow-up analyses to practise:
-# 1. Compare category performance by Month using pd.crosstab(df['MONTH'], df['Category']).
-# 2. Find highest-value customers: group by Cust ID and sum Amount.
-# 3. Calculate cancellation rate: status_summary / total_orders * 100.
-# 4. Build the same KPIs and charts in Power BI using cleaned_ecommerce_sales.csv.
