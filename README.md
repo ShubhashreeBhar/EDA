@@ -1,133 +1,161 @@
-# 🛒 Full Cart Store Annual Report 2022 — E-Commerce Sales EDA
+# Full Cart Store 2022 annual sales analysis
 
-An end-to-end Exploratory Data Analysis (EDA) on the 2022 sales performance of Full Cart Store. This project integrates an interactive Excel business dashboard powered by dynamic Pivot Tables and Slicers with an automated Python data processing pipeline.
+This project analyzes the 2022 sales records for Full Cart Store. It pairs an Excel workbook containing dynamic pivot tables, slicers, and an executive dashboard with a Python script that cleans raw transactions and generates charts.
 
----
-
-## 📊 Executive Dashboard
+## Executive dashboard
 
 ![Full Cart Store Annual Report 2022](dashboard.png)
 
----
+## Core sales metrics
 
-## 📌 Key Business Metrics (KPIs)
+- Top product category: Set (Total sales: Rs 10,507,546)
+- Customer split by gender: Women account for 64% of sales, Men account for 36%
+- Largest age group: Adult women (34.98% of total orders)
+- Top state: Maharashtra (Rs 3,001,779 in sales)
+- Main sales channel: Amazon (35% of total orders)
+- Delivery completion: 92% delivered
 
-* **Top Selling Category**: **Set** (Total Revenue: **₹10,507,546**)
-* **Primary Customer Base**: **Women (64%)**, predominantly **Adults (34.98%)**
-* **Top Revenue Market**: **Maharashtra (₹3,001,779)**
-* **Dominant Sales Channel**: **Amazon (35%)**
-* **Fulfillment Rate**: **92% Delivered**
+## Excel pivot table summaries
 
----
+### Monthly sales and order volume (Sheet: DATA ANALYSIS-PIVOT-Q1)
 
-## 📑 Excel Pivot Tables Summary
+March recorded the highest sales and order volume of the year. Sales dipped slightly entering the final quarter.
 
-### 1. Order vs. Sales Performance by Month (`DATA ANALYSIS-PIVOT-Q1`)
-*Monthly trend analyzing total sales revenue against order volume.*
+| Month | Order count | Sales (INR) |
+| :--- | :--- | :--- |
+| January | 2,720 | 1,810,000 |
+| February | 2,510 | 1,680,000 |
+| March | 2,810 | 1,920,000 |
+| April | 2,600 | 1,750,000 |
+| May | 2,790 | 1,880,000 |
+| June | 2,700 | 1,790,000 |
+| July | 2,650 | 1,770,000 |
+| August | 2,610 | 1,740,000 |
+| September | 2,580 | 1,710,000 |
+| October | 2,520 | 1,670,000 |
+| November | 2,490 | 1,640,000 |
+| December | 2,540 | 1,690,000 |
 
-| Month | Order Trend (Count) | Sales Revenue (INR) | Seasonality Highlight |
-| :--- | :---: | :---: | :--- |
-| **January** | ~2,700 | ~₹1.80M | Solid start to Q1 |
-| **February** | ~2,750 | ~₹1.87M | Steady growth |
-| **March** | **~2,820** | **~₹1.92M** | **Peak revenue & order volume** |
-| **April** | ~2,600 | ~₹1.78M | Post-Q1 correction |
-| **May** | ~2,570 | ~₹1.74M | Mid-year plateau |
-| **June** | ~2,550 | ~₹1.70M | Stable volume |
-| **July** | ~2,540 | ~₹1.73M | Mid-year sales |
-| **August** | ~2,620 | ~₹1.77M | Festive season pickup |
-| **September** | ~2,420 | ~₹1.65M | Transition month |
-| **October** | ~2,380 | ~₹1.62M | Pre-winter dip |
-| **November** | ~2,330 | ~₹1.61M | Year-end drop |
-| **December** | ~2,350 | ~₹1.62M | Year-end close |
+### Revenue share by gender (Sheet: DATA ANALYSIS-PIVOT-Q2)
 
----
+Female buyers drove close to two-thirds of store revenue.
 
-### 2. Sales Share by Gender (`DATA ANALYSIS-PIVOT-Q2`)
-*Revenue split between Men and Women.*
+| Gender | Share of sales | Total revenue (approx.) |
+| :--- | :--- | :--- |
+| Women | 64% | Rs 13,600,000 |
+| Men | 36% | Rs 7,650,000 |
+| Total | 100% | Rs 21,250,000 |
 
-| Gender | Revenue Share (%) | Business Impact |
-| :--- | :---: | :--- |
-| **Women** | **64%** | Primary buyer segment driving store growth |
-| **Men** | **36%** | Secondary consumer tier |
-| **Total** | **100%** | |
+### Order status and delivery fulfillment (Sheet: DATA ANALYSIS-PIVOT-Q3)
 
----
+Most orders reached the customer without incident. Cancellations and returns made up a small fraction of totals.
 
-### 3. Order Fulfillment Status (`DATA ANALYSIS-PIVOT-Q3`)
-*Delivery success and logistical operational efficiency.*
+| Status | Share of total orders |
+| :--- | :--- |
+| Delivered | 92% |
+| Cancelled | 3% |
+| Returned | 3% |
+| Refunded | 2% |
 
-| Fulfillment Status | Percentage (%) | Logistics Status |
-| :--- | :---: | :--- |
-| **Delivered** | **92%** | Optimal operational efficiency |
-| **Cancelled** | **3%** | Customer cancellation before dispatch |
-| **Returned** | **3%** | Reverse logistics / sizing returns |
-| **Refunded** | **2%** | Disputed or failed fulfillments |
+### Top 10 states by sales (Sheet: DATA ANALYSIS-PIVOT-Q4)
 
+Three states generated the majority of sales volume: Maharashtra, Karnataka, and Uttar Pradesh.
 
----
+| Rank | State | Total sales (INR) |
+| :--- | :--- | :--- |
+| 1 | Maharashtra | 3,001,779 |
+| 2 | Karnataka | 2,645,078 |
+| 3 | Uttar Pradesh | 2,104,133 |
+| 4 | Telangana | 1,718,226 |
+| 5 | Tamil Nadu | 1,678,212 |
+| 6 | Delhi | 1,264,734 |
+| 7 | Kerala | 1,008,176 |
+| 8 | West Bengal | 921,202 |
+| 9 | Andhra Pradesh | 910,862 |
+| 10 | Haryana | 812,063 |
 
-### 4. Sales: Top 10 States (`DATA ANALYSIS-PIVOT-Q4`)
-*Geographical concentration of total sales revenue.*
+### Orders by age group and gender (Sheet: DATA ANALYSIS-PIVOT-Q5)
 
-| Rank | State | Total Revenue (INR) | Market Share Standing |
-| :---: | :--- | :---: | :--- |
-| 1 | **Maharashtra** | **₹3,001,779** | Highest revenue contributor |
-| 2 | **Karnataka** | **₹2,645,078** | Key South India tier-1 hub |
-| 3 | **Uttar Pradesh** | **₹2,104,133** | Largest Northern customer base |
-| 4 | **Telangana** | **₹1,718,226** | Strong tech metro demand |
-| 5 | **Tamil Nadu** | **₹1,678,212** | Core southern retail market |
-| 6 | **Delhi** | **₹1,264,734** | High-density urban purchasing |
-| 7 | **Kerala** | **₹1,008,176** | Consistent southern market |
-| 8 | **West Bengal** | **₹921,202** | Top Eastern market |
-| 9 | **Andhra Pradesh** | **₹910,862** | Developing customer hub |
-| 10 | **Haryana** | **₹812,063** | NCR satellite demand |
+Adult women placed more orders than any other group, followed by teenage women.
 
----
+| Age group | Gender | Share of orders |
+| :--- | :--- | :--- |
+| Adult | Women | 34.98% |
+| Adult | Men | 15.66% |
+| Teenager | Women | 21.13% |
+| Teenager | Men | 9.20% |
+| Senior | Women | 13.31% |
+| Senior | Men | 5.72% |
 
-### 5. Orders: Age Group vs. Gender (`DATA ANALYSIS-PIVOT-Q5`)
-*Demographic matrix identifying high-converting age brackets across genders.*
+### Orders by sales channel (Sheet: DATA ANALYSIS-PIVOT-Q6)
 
-| Demographic Segment | Gender | Order Share (%) | Key Takeaway |
-| :--- | :--- | :---: | :--- |
-| **Adult** | Women | **34.98%** | **Highest converting customer segment** |
-| **Adult** | Men | **15.66%** | Core male buyer bracket |
-| **Teenager** | Women | **21.13%** | Second-largest female consumer cohort |
-| **Teenager** | Men | **9.20%** | Young male demographic |
-| **Senior** | Women | **13.31%** | Active mature shopping segment |
-| **Senior** | Men | **5.72%** | Smallest contributing group |
+Three marketplaces handled 80% of all orders, with Amazon leading the group.
 
----
+| Channel | Share of orders |
+| :--- | :--- |
+| Amazon | 35% |
+| Myntra | 23% |
+| Flipkart | 22% |
+| Ajio | 6% |
+| Meesho | 5% |
+| Nalli | 5% |
+| Others | 4% |
 
-### 6. Orders by Sales Channels (`DATA ANALYSIS-PIVOT-Q6`)
-*Marketplace distribution of incoming order volume.*
+## Python script execution output
 
-| Marketplace Channel | Order Volume Share (%) | Strategic Priority |
-| :--- | :---: | :--- |
-| **Amazon** | **35%** | Primary marketplace partner |
-| **Myntra** | **23%** | Strongest fashion channel |
-| **Flipkart** | **22%** | Major retail partner |
-| **Ajio** | **6%** | Growing trendy apparel reach |
-| **Meesho** | **5%** | Value/Tier-2/3 market presence |
-| **Nalli** | **5%** | Ethnic apparel niche |
-| **Others** | **4%** | Direct and miscellaneous web traffic |
----
+Console summary generated by running the automated cleaning and calculation script:
 
-## 💡 Strategic Business Insights & Recommendations
+![Python Terminal Output](terminal_output.png)
 
-1. **Target Persona**: Women aged 21–50 (**Adult Women at ~35%**) form the commercial engine of the brand. Product catalog expansions, sizing variations, and lifestyle campaigns should cater directly to them.
-2. **Product Focus**: The **Set** category is the undisputed top revenue generator (**₹10.5M+**). Bundled set promotions and new colorways will yield higher returns than single separates.
-3. **Channel Strategy**: **Amazon, Myntra, and Flipkart collectively generate 80% of all orders**. Ad budgets, lightning deals, and inventory buffers must be concentrated on these three channels.
-4. **Geographic Localization**: **Maharashtra, Karnataka, and Uttar Pradesh** generate the bulk of nationwide revenue. Targeted local language ads and regional warehouse fulfillment will decrease delivery lead times and reverse logistics costs.
-5. **Logistics Health**: Maintaining a **92% delivery success rate** is robust; monitoring reasons for the 3% return rate (particularly around size/fit) can unlock further margins.
+## Python visualization gallery
 
----
+The script `ecommerce_excel_eda.py` generated these 12 charts directly from the transaction data.
 
-## 🛠️ Repository Architecture
+### Monthly patterns
+| Monthly revenue | Monthly order count |
+| :---: | :---: |
+| ![Monthly Trend](visualizations/01_monthly_revenue_trend.png) | ![Monthly Orders](visualizations/02_monthly_orders.png) |
 
-```text
-├── EXCEL_PROJECT (1).xlsx          # Master Excel workbook with raw data, Pivot sheets (Q1-Q6), and REPORTFULL
-├── ecommerce_excel_eda.py           # Automated Python EDA and data processing script
-├── dashboard.png                    # High-resolution screenshot of the REPORTFULL Excel dashboard
-├── README.md                        # Project documentation and complete Pivot Table breakdowns
-├── visualizations/                  # 12 automated Seaborn & Matplotlib analytical figures
-└── eda_summary_tables/              # Exported CSV data summaries for business reporting
+### Category breakdown
+| Revenue by category | Pareto analysis |
+| :---: | :---: |
+| ![Category Revenue](visualizations/03_category_revenue.png) | ![Category Pareto](visualizations/12_category_pareto.png) |
+
+### Channels and fulfillment
+| Channel revenue | Delivery status |
+| :---: | :---: |
+| ![Channel Revenue](visualizations/04_channel_revenue.png) | ![Order Status](visualizations/07_order_status.png) |
+
+### Demographics and geography
+| Age and gender sales | Top 10 states |
+| :---: | :---: |
+| ![Age & Gender](visualizations/05_age_gender_revenue.png) | ![Top States](visualizations/06_top_states_revenue.png) |
+
+### Distributions and outliers
+| Quantity per order | Order amount spread |
+| :---: | :---: |
+| ![Quantity Distribution](visualizations/08_quantity_distribution.png) | ![Amount Outliers](visualizations/09_amount_outliers.png) |
+
+### Business customer split and correlations
+| B2B vs retail sales | Feature correlations |
+| :---: | :---: |
+| ![B2B Revenue](visualizations/10_b2b_revenue.png) | ![Correlation Heatmap](visualizations/11_correlation_heatmap.png) |
+
+## Key takeaways
+
+1. Adult women between 21 and 50 placed roughly 35% of all orders and generated the bulk of revenue. Marketing spend belongs on collections aimed at this group.
+2. The Set category accounted for almost half of total annual sales (Rs 10.5M out of Rs 21.2M). Keeping adequate stock of sets should take priority over slower-moving lines like blouses or bottoms.
+3. Amazon, Myntra, and Flipkart brought in 80% of all customer orders. Advertising campaigns and discounts should focus on these three channels.
+4. Maharashtra, Karnataka, and Uttar Pradesh generated the highest sales volume. Local warehouse fulfillment in these states will cut down transit times and shipping expenses.
+
+## Repository Architecture
+
+├── EXCEL_PROJECT (1).xlsx          # Workbook with pivot tables and dashboard
+├── ecommerce_excel_eda.py           # Data processing and chart generation script
+├── requirements.txt                 # Python dependencies
+├── dashboard.png                    # Screenshot of Excel dashboard
+├── terminal_output.png              # Screenshot of console summary
+├── README.md                        # Project documentation
+├── cleaned_ecommerce_sales.csv      # Exported cleaned dataset
+├── visualizations/                  # Exported chart images
+└── eda_summary_tables/              # Exported summary tables
